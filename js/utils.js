@@ -10,10 +10,10 @@ const Utils = (() => {
   const DAY_MS = 24 * 60 * 60 * 1000;
 
   const PRIORITIES = {
-    1: { label: 'Urgent', short: 'P1' },
-    2: { label: 'High', short: 'P2' },
-    3: { label: 'Medium', short: 'P3' },
-    4: { label: 'Low', short: 'P4' },
+    1: { label: 'Urgent' },
+    2: { label: 'High' },
+    3: { label: 'Medium' },
+    4: { label: 'Low' },
   };
 
   const pad = (n) => String(n).padStart(2, '0');

@@ -377,7 +377,7 @@ const Views = (() => {
       <div class="toolbar">
         <div class="chip-group" role="group" aria-label="Filter by priority">
           ${chip('all', 'All')}
-          ${[1, 2, 3, 4].map((n) => chip(String(n), P[n].short, `<i class="pdot prio-${n}"></i>`)).join('')}
+          ${[1, 2, 3, 4].map((n) => chip(String(n), P[n].label, `<i class="pdot prio-${n}"></i>`)).join('')}
         </div>
         <div class="toolbar-right">
           ${view.kind === 'completed' && completedCount ? `<button class="btn-ghost sm danger" data-action="clear-completed">${icon('trash', 14)} Clear all</button>` : ''}
