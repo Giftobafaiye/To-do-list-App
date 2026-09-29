@@ -196,9 +196,13 @@ const Views = (() => {
           ${navItem('all', icon('list'), 'All tasks', open.length)}
           ${navItem('today', icon('sun'), 'Today', count((t) => t.dueDate && t.dueDate <= today))}
           ${navItem('upcoming', icon('forward'), 'Upcoming', count((t) => t.dueDate && t.dueDate > today))}
-          ${navItem('calendar', icon('calendar'), 'Calendar')}
           ${navItem('completed', icon('check-circle'), 'Completed', state.tasks.length - open.length)}
         </nav>
+
+        <section class="side-section" aria-label="Calendar">
+          <div class="side-head"><span class="mono-tag">-plan ahead</span></div>
+          ${navItem('calendar', icon('calendar'), 'Calendar', count((t) => t.dueDate))}
+        </section>
 
         <section class="side-section" aria-label="Projects">
           <div class="side-head">
