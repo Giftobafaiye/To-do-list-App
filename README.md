@@ -11,7 +11,7 @@ A fast, good-looking to-do list app with priorities, due dates, reminders, calen
 
 That's it. The app opens with demo data so you can explore right away. Use **Reset demo** in the sidebar to get it back at any time.
 
-> **Live demo:** _add your GitHub Pages link here_
+> **Live demo:** https://giftobafaiye.github.io/To-do-list-App/
 
 ## Features
 
