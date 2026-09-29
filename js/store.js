@@ -187,7 +187,7 @@ const Store = (() => {
     if (project) commit(() => Object.assign(project, patch));
   }
 
-  // Tasks in a deleted project move to the Inbox rather than being lost.
+  // Tasks in a deleted project are kept (with no project) rather than being lost.
   function deleteProject(id) {
     commit((s) => {
       s.projects = s.projects.filter((p) => p.id !== id);

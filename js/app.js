@@ -166,7 +166,7 @@
   // Tasks added from a project, label, tag, Today or a calendar day inherit that context.
   function viewDefaults() {
     const [kind, value] = ui.view.split(/:(.*)/s);
-    if (kind === 'project') return { projectId: value === 'inbox' ? null : value };
+    if (kind === 'project') return { projectId: value };
     if (kind === 'label') return { labelIds: [value] };
     if (kind === 'tag') return { tags: [value] };
     if (kind === 'today') return { dueDate: Utils.todayKey() };
@@ -413,7 +413,7 @@
     'modal-delete'() {
       const { type, id } = ui.modal;
       const message = {
-        project: 'Delete this project? Its tasks will move to the Inbox.',
+        project: 'Delete this project? Its tasks will be kept, with no project.',
         label: 'Delete this label? It will be removed from every task.',
         category: 'Delete this category? Its projects will be kept.',
       }[type];

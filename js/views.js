@@ -33,16 +33,15 @@ const Views = (() => {
     const [kind, value] = ui.view.split(/:(.*)/s);
 
     if (kind === 'project') {
-      const isInbox = value === 'inbox';
-      const project = !isInbox && projectById(state, value);
-      if (isInbox || project) {
-        const category = project && state.categories.find((c) => c.id === project.categoryId);
-        const inProject = (t) => (isInbox ? !t.projectId : t.projectId === value);
+      const project = projectById(state, value);
+      if (project) {
+        const category = state.categories.find((c) => c.id === project.categoryId);
+        const inProject = (t) => t.projectId === value;
         return {
-          kind, title: isInbox ? 'Inbox' : project.name,
-          eyebrow: isInbox ? '-tasks without a project' : `-project${category ? ` · ${category.name.toLowerCase()}` : ''}`,
+          kind, title: project.name,
+          eyebrow: `-project${category ? ` · ${category.name.toLowerCase()}` : ''}`,
           tasks: open.filter(inProject), completed: done.filter(inProject), mode: 'buckets',
-          empty: isInbox ? 'Tasks you add without a project land here.' : 'Add the first task for this project above.',
+          empty: 'Add the first task for this project above.',
         };
       }
     }
@@ -206,7 +205,6 @@ const Views = (() => {
             <span class="mono-tag">-projects</span>
             <button class="icon-btn sm" data-action="open-modal" data-type="project" aria-label="New project">${icon('plus', 16)}</button>
           </div>
-          ${navItem('project:inbox', icon('inbox'), 'Inbox', count((t) => !t.projectId))}
           ${loose.map(projectRow).join('')}
           ${categories}
           <button class="side-add" data-action="open-modal" data-type="category">${icon('folder', 15)} New category</button>
@@ -561,7 +559,7 @@ const Views = (() => {
       : '<span class="status-pill">No due date</span>';
 
     const projectOptions = [
-      `<option value="">Inbox</option>`,
+      `<option value="">No project</option>`,
       ...state.projects.filter((p) => !state.categories.some((c) => c.id === p.categoryId))
         .map((p) => `<option value="${p.id}"${p.id === task.projectId ? ' selected' : ''}>${e(p.name)}</option>`),
       ...state.categories.map((c) => {

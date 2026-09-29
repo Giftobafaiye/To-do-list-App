@@ -29,7 +29,7 @@ That's it. The app opens with demo data so you can explore right away. Use **Res
 | **Notes** | A notes field on every task, included in search and calendar exports. |
 | **Labels, tags & priorities** | Colour labels you manage in the sidebar, free-form `#tags`, and priorities, each with its own filtered view. |
 | **Sub-tasks & checklists** | Sub-tasks (each with an optional due date) and a separate checklist, both with progress bars. |
-| **Projects & categories** | Projects grouped under categories (e.g. *Work → Internship*). Deleting a project moves its tasks to the Inbox rather than losing them. |
+| **Projects & categories** | Projects grouped under categories (e.g. *Work → Internship*). Deleting a project keeps its tasks rather than losing them. |
 
 **Extras:** dark mode, a responsive mobile layout, search, five sort orders, keyboard shortcuts, backup/restore to a JSON file, and data saved automatically in the browser.
 
