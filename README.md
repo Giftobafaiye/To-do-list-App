@@ -11,7 +11,7 @@ A fast, good-looking to-do list app with priorities, due dates, reminders, calen
 
 That's it. The app opens with demo data so you can explore right away. Use **Reset demo** in the sidebar to get it back at any time.
 
-> **Live demo:** https://giftobafaiye.github.io/To-do-list-App/
+> **Live demo:** https://doable-gift.vercel.app/ (mirror on [GitHub Pages](https://giftobafaiye.github.io/To-do-list-App/))
 
 ## Features
 
@@ -97,8 +97,9 @@ This is a front-end-only app, so a few features are deliberately scoped:
 - **Desktop alerts** need the browser's permission. Some browsers block them for files opened directly from disk, so they work best from the hosted version.
 - Data is stored per browser. Use **Backup / Restore** to move it between devices.
 
-## Deploy to GitHub Pages
+## Deployment
 
-1. Create a new repository on GitHub and upload these files.
-2. Go to **Settings → Pages**, set the source to the `main` branch and the `/ (root)` folder, then save.
-3. After about a minute your app is live at `https://<your-username>.github.io/<repo-name>/`.
+The app is static files only, so any static host works. It's deployed in two places, and both redeploy automatically on every push to `main`:
+
+- **Vercel** (https://doable-gift.vercel.app/): the GitHub repository is imported into Vercel with the Framework Preset set to *Other* and no build command.
+- **GitHub Pages** (https://giftobafaiye.github.io/To-do-list-App/): served from the `main` branch, root folder.
