@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Design tokens
+   Taken from the design reference: burnt-orange blocks, warm cream paper,
+   a graphite floor and black type. Orange leads; grey and black balance it.
+   Change a value here and the whole app follows.
+   ========================================================================== */
+
+:root {
+  /* ---- Raw palette ---- */
+  --orange-700: #A8431C;
+  --orange-600: #C4521F;
+  --orange-500: #DD6031; /* primary, sampled from the reference */
+  --orange-300: #EE9E7B;
+  --orange-100: #F7DCCF;
+
+  --cream-200: #E3DED3;
+  --cream-100: #ECE8DF; /* page background, like the wall in the reference */
+  --cream-50:  #F6F4EF;
+
+  --grey-900: #121212;
+  --grey-800: #1C1C1B;
+  --grey-700: #2A2A28;
+  --grey-600: #4A4945;
+  --grey-500: #6F6E69; /* the graphite floor */
+  --grey-400: #9A988F;
+  --grey-300: #C6C2B8;
+
+  --white: #FFFFFF;
+  --red-600: #B42318;
+
+  /* ---- Typography ---- */
+  --font-sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+
+  /* ---- Shape: chunky rounded blocks like the illustration ---- */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* ---- Layout ---- */
+  --sidebar-w: 272px;
+  --drawer-w: 480px;
+
+  /* ---- Light theme (default) ---- */
+  --bg: var(--cream-100);
+  --surface: var(--cream-50);
+  --surface-raised: var(--white);
+  --surface-sunken: var(--cream-200);
+  --text: var(--grey-900);
+  --text-muted: var(--grey-500);
+  --text-faint: var(--grey-400);
+  --border: rgb(18 18 18 / 0.10);
+  --border-strong: rgb(18 18 18 / 0.22);
+
+  --primary: var(--orange-500);
+  --primary-hover: var(--orange-600);
+  --primary-soft: var(--orange-100);
+  --on-primary: var(--grey-900); /* black on orange passes WCAG AA; white does not */
+  --danger: var(--red-600);
+
+  /* Priority colours: P1 urgent → P4 low */
+  --p1: var(--red-600);
+  --p2: var(--orange-500);
+  --p3: var(--grey-500);
+  --p4: var(--grey-300);
+
+  --shadow-sm: 0 1px 2px rgb(18 18 18 / 0.06);
+  --shadow-md: 0 8px 24px rgb(18 18 18 / 0.10);
+  --shadow-lg: 0 24px 64px rgb(18 18 18 / 0.20);
+  --scrim: rgb(18 18 18 / 0.35);
+
+  color-scheme: light;
+}
+
+/* ---- Dark theme: black leads, orange stays the accent ---- */
+[data-theme="dark"] {
+  --bg: var(--grey-900);
+  --surface: var(--grey-800);
+  --surface-raised: var(--grey-700);
+  --surface-sunken: #0A0A0A;
+  --text: #EEEBE4;
+  --text-muted: var(--grey-400);
+  --text-faint: var(--grey-500);
+  --border: rgb(238 235 228 / 0.10);
+  --border-strong: rgb(238 235 228 / 0.22);
+
+  --primary: #E8703F;
+  --primary-hover: #F08556;
+  --primary-soft: rgb(232 112 63 / 0.18);
+  --on-primary: var(--grey-900);
+  --danger: #F97066;
+
+  --p1: #F97066;
+  --p2: #E8703F;
+  --p3: var(--grey-400);
+  --p4: var(--grey-600);
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 24px 64px rgb(0 0 0 / 0.6);
+  --scrim: rgb(0 0 0 / 0.55);
+
+  color-scheme: dark;
+}
